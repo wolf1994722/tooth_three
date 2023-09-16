@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "three": "^0.156.0",
+    "three-csg-modeller": "github:ycw/three-csg-modeller#v0.1.10",
+    "threebsp": "^1.0.4"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9"
+  }
+}

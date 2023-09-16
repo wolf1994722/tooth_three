@@ -1,0 +1,422 @@
+body {
+    margin: 0px;
+}
+
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#dropdownMenu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+#dropdownMenu li {
+    float: none;
+}
+
+#dropdownMenu li a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+#dropdownMenu li a:hover {
+    background-color: #f1f1f1;
+}
+
+nav li button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 16px;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+.modal-content .button-group {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-content .button-group button {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.toolbar {
+    margin: 0px;
+    padding: 10px;
+    display: flex;
+    list-style-type: none;
+}
+
+.toolbar li {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0px 30px;
+    border-radius: 5px;
+    border: solid 2px #333;
+}
+
+.toolbar li a {
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    display: block;
+
+}
+
+.container {
+    padding: 0px 30px 30px;
+    display: flex;
+}
+
+.left-panel {
+    width: 70%;
+    position: relative;
+}
+
+.right-panel {
+    width: 30%;
+}
+
+#img_tag {
+    margin: auto;
+    margin-top: 0px;
+    /* height: 40vh; */
+    width: 480px;
+    height: 360px;
+    border: solid 1px #333;
+    background-color: lightgray;
+    position: relative;
+    overflow: hidden;
+}
+
+.real-distance {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    display: none;
+}
+
+.real-distance .real-point {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #333;
+    transform: translate(-66%, -57%);
+}
+
+.real-distance #real_point_a {
+    margin-right: 100px;
+}
+
+.childDiv {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    cursor: move;
+    transform: translate(-66%, -57%);
+}
+
+.childDiv1 {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-66%, -57%);
+}
+
+#img_tag img {
+    width: 100%;
+    visibility: unset !important;
+}
+
+#points_table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#points_table td,
+#points_table th {
+    border: 1px solid #ddd;
+}
+
+#points_table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#points_table tr:hover {
+    background-color: #ddd;
+}
+
+#points_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #333;
+    color: white;
+}
+
+.red-point {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0px 20%;
+    padding: 8px;
+}
+
+.red-point div {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: red;
+    display: inline-block;
+    margin-left: 30%;
+}
+
+.input-field {
+    margin-top: 10px;
+    display: flex;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin: 0px 10px;
+    font-size: 30px;
+    border: solid 1px #333;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.input-group-prepend,
+.input-group-append {
+    display: inline-block;
+}
+
+.input-group-text {
+    border: none;
+    padding: 0.375rem 0.75rem;
+}
+
+table tr th:nth-child(1), table tr td:nth-child(1) {
+    width: 30%;
+    text-align: left;
+}
+
+table tr th:nth-child(2), table tr td:nth-child(2) {
+    width: 23.3%;
+}
+
+table tr th:nth-child(3), table tr td:nth-child(3) {
+    width: 23.3%;
+}
+
+table tr th:nth-child(4), table tr td:nth-child(4) {
+    width: 23.3%;
+}
+
+table thead {
+    text-align: center;
+}
+
+table tbody{
+    text-align: right;
+}
+
+.obj-rotate-input {
+    position: absolute;
+    top: 700px;
+    left: 700px;
+    z-index: 100;
+    display: flex;
+}
+
+.obj-rotate-input .input-group {
+    display: flex;
+    align-items: center;
+    margin: 0px 5px;
+    font-size: 30px;
+    border: solid 1px #333;
+    border-radius: 8px;
+}
+    
+.obj-rotate-input .input-group-prepend,
+.obj-rotate-input .input-group-append {
+    display: inline-block;
+}
+
+.obj-rotate-input .input-group-text {
+    border: none;
+    padding: 0.375rem 0.75rem;
+}
+
+
+.input-group-text button {
+    vertical-align: middle;
+    font-size: 22px;
+}
+
+.obj-rotate-input .form-control {
+    display: inline-block;
+    text-align: right;
+    font-size: 20px;
+    flex: 1;
+    border: none;
+    border-radius: 0;
+    width: 50px;
+}
+
+.form-control {
+    display: inline-block;
+    text-align: right;
+    font-size: 20px;
+    flex: 1;
+    border: none;
+    border-radius: 0;
+    width: 100px;
+}
+
+.form-control:focus{
+    border: none;
+    outline: none;
+}
+
+#axio {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* z-index: 100; */
+}
+
+.x-axios {
+    position: absolute;
+    top: 100%;
+    width: 200%;
+    height: 2px;
+    background-color: black;
+}
+
+.y-axios {
+    position: absolute;
+    left: 100%;
+    height: 200%;
+    width: 2px;
+    background-color: black;
+}
+
+/* .tr[class^="cell-"] {
+    background-color: #aaa;
+} */
+
+.point-label {
+    position: absolute;
+    top: -50%;
+    left: 150%;
+    color: red;
+}
+
+.point-label span {
+    color: black;
+    font-weight: 700;
+}
+
+#view_panel {
+    width: 1068px;
+    height: 750px;
+    /* margin: auto; */
+}
+
+.left-panel button {
+    position: absolute;
+    top: 10px;
+    padding: 10px 30px;
+    background-color: #888;
+    color: #fefefe;
+    font-size: 20px;
+    border: none;
+}
+
+.left-panel button:hover {
+    background-color: #666;
+}
+
+#xy_view {
+    left: 770px;
+}
+
+#yz_view {
+    left: 870px;
+}
+
+#xz_view {
+    left: 970px;
+}
+
+
+

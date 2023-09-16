@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Navbar with Modal</title>
+	<link rel="stylesheet" type="text/css" href="./src/assets/main.css">
+</head>
+
+<body>
+	<nav>
+		<ul>
+			<li><a href="#" id="dropdownButton">Menu</a>
+				<ul id="dropdownMenu">
+					<li><a href="#" id="importButton">Import Image</a></li>
+					<li><a href="#" id="modalButton">Real distance</a></li>
+				</ul>
+			</li>
+			<li><a href="#">About</a></li>
+		</ul>
+	</nav>
+	<ul class="toolbar">
+		<li><a id="import_stl_btn" href="#">STL import</a></li>
+		<li><a id="export_stl_btn" href="#">STL export</a></li>
+		<li><a id="show_point" href="#">O</a></li>
+		<li><a id="create_opposite" href="#">O | O</a></li>
+		<li><a id="create_sphere" href="#">OOO</a></li>
+	</ul>
+	<div class="container">
+		<div class="left-panel">
+			<button id="xy_view">XY</button>
+			<button id="yz_view">YZ</button>
+			<button id="xz_view">XZ</button>
+			<div class="obj-rotate-input">
+				<div class="input-group">
+					<span class="input-group-prepend">
+						<span class="input-group-text">rx</span>
+					</span>
+					<input type="number" class="form-control" id="obj_rotate_x">
+				</div>
+				<div class="input-group">
+					<span class="input-group-prepend">
+						<span class="input-group-text">ry</span>
+					</span>
+					<input type="number" class="form-control" id="obj_rotate_y">
+				</div>
+				<div class="input-group">
+					<span class="input-group-prepend">
+						<span class="input-group-text">rz</span>
+					</span>
+					<input type="number" class="form-control" id="obj_rotate_z">
+				</div>
+			</div>
+			<div id="view_panel"></div>
+		</div>
+		<div class="right-panel">
+			<div id="img_tag">
+				<div id="axio">
+					<div class="x-axios"></div>
+					<div class="y-axios"></div>
+				</div>
+				<div class="real-distance">
+					<div class="real-point" id="real_point_a"></div>
+					<div class="real-point" id="real_point_b"></div>
+				</div>
+			</div>
+			<div class="input-field">
+				<div class="input-group">
+					<span class="input-group-prepend">
+						<span class="input-group-text"><button id="calr_btn">R</button></span>
+					</span>
+					<input type="number" class="form-control" name="radius">
+					<span class="input-group-append">
+						<span class="input-group-text"><sub>mm</sub></span>
+					</span>
+				</div>
+				<div class="input-group">
+					<span class="input-group-prepend">
+						<span class="input-group-text">&theta;</span>
+					</span>
+					<input type="number" class="form-control" name="thita">
+					<span class="input-group-append">
+						<span class="input-group-text">&deg;</span>
+					</span>
+				</div>
+			</div>
+			<table id="points_table">
+				<thead>
+					<tr>
+						<th>name</th>
+						<th>x</th>
+						<th>y</th>
+						<th>z</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+	<div id="modal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Set real distance</h2>
+			<p>please input real distance:</p>
+			<form>
+				<div class="input-group">
+					<span class="input-group-prepend">
+						<span class="input-group-text">L</span>
+					</span>
+					<input type="number" class="form-control" name="real-distance">
+					<span class="input-group-append">
+						<span class="input-group-text"><sub>mm</sub></span>
+					</span>
+				</div>
+				<div class="button-group">
+					<button id="ok-btn">OK</button>
+					<button id="cancel-btn">cancel</button>
+				</div>
+			</form>
+		</div>
+		<input type="file" id="fileInput" style="display: none;">
+	</div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="./src/main.js"></script>
+	<script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+	<!-- <script type="module" src="./threeBSP.js"></script> -->
+	<script type="importmap">
+		{
+			"imports": {
+				"three": "../build/three.module.js",
+				"three/addons/": "./jsm/",
+				"three-mesh-bvh": "./three-mesh-bvh.js",
+				"three-bvh-csg": "./three-bvh-csg.js"
+			}
+		}
+	</script>
+	<script type="module" src="/threejs.js"></script>
+</body>
+
+</html>
