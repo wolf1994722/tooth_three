@@ -1,7 +1,7 @@
 import * as THREE from 'three';
-import { spawn } from 'child_process';
-import { os } from 'os';
-import { path } from 'path';
+// import { exec } from 'child_process';
+// import { os } from 'os';
+// import { path } from 'path';
 
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
@@ -315,8 +315,6 @@ $(document).ready(function () {
             var deltaX = event.clientX - mouseX;
             var deltaY = event.clientY - mouseY;
 
-            // console.log(event.clientX, event.clientY, deltaX, deltaY);
-
             // Update the position of the cube based on mouse movement
             if (view_type == "xy") {
                 select_obj.position.x -= deltaX * 0.03;
@@ -365,8 +363,6 @@ $(document).ready(function () {
 
             points.push(new THREE.Vector3(0, - sphere_r, 0));
             points.push(new THREE.Vector3(x, z, y));
-
-            // points.push( new THREE.Vector3( 10, 0, 0 ) );
 
             const geometry = new THREE.BufferGeometry().setFromPoints(points);
 
@@ -420,8 +416,6 @@ $(document).ready(function () {
     }
 
     document.getElementById("export_stl_btn").addEventListener("click", function () {
-        // create_model();
-
         exportBinary();
     });
 
@@ -439,7 +433,6 @@ $(document).ready(function () {
     function animate() {
 
         requestAnimationFrame(animate);
-        // group.rotation.y += 0.005;
         render();
 
     }
@@ -448,42 +441,42 @@ $(document).ready(function () {
         renderer.render(scene, camera);
     }
 
-    function get_download_folder(){
-        let downloadFolderPath;
-        switch (os.platform()) {
-        case 'win32':
-            downloadFolderPath = path.join(os.homedir(), 'Downloads');
-            break;
-        case 'darwin':
-            downloadFolderPath = path.join(os.homedir(), 'Downloads');
-            break;
-        case 'linux':
-            downloadFolderPath = path.join(os.homedir(), 'Downloads');
-            break;
-        default:
-            console.error('Unsupported operating system.');
-            return;
-        }
+    // function get_download_folder(){
+    //     let downloadFolderPath;
+    //     switch (os.platform()) {
+    //     case 'win32':
+    //         downloadFolderPath = path.join(os.homedir(), 'Downloads');
+    //         break;
+    //     case 'darwin':
+    //         downloadFolderPath = path.join(os.homedir(), 'Downloads');
+    //         break;
+    //     case 'linux':
+    //         downloadFolderPath = path.join(os.homedir(), 'Downloads');
+    //         break;
+    //     default:
+    //         console.error('Unsupported operating system.');
+    //         return;
+    //     }
 
-        console.log('Standard download folder:', downloadFolderPath);
-    }
+    //     console.log('Standard download folder:', downloadFolderPath);
+    // }
 
-    get_download_folder();
+    // get_download_folder();
 
-    function run_app(){
+    // function run_app(){
         
-        exec('tooth_app.exe', (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.error(`stderr: ${stderr}`);
-            return;
-        }
-        console.log(`stdout: ${stdout}`);
-        });
+    //     exec('tooth_app.exe', (error, stdout, stderr) => {
+    //     if (error) {
+    //         console.error(`Error: ${error.message}`);
+    //         return;
+    //     }
+    //     if (stderr) {
+    //         console.error(`stderr: ${stderr}`);
+    //         return;
+    //     }
+    //     console.log(`stdout: ${stdout}`);
+    //     });
 
-    }
+    // }
 
 });
